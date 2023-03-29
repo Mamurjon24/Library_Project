@@ -15,6 +15,6 @@ public class StudentBook {
     private Student student;
     private Book book;
     private LocalDate createdDate;
-    private String returnedDate;
+    private LocalDate returnedDate;
     private String duration;
 }

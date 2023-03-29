@@ -1,15 +1,13 @@
 package com.example.Library_Project.controller;
-
 import com.example.Library_Project.dto.Book;
-import com.example.Library_Project.dto.Student;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+@RestController
+@RequestMapping(value = "/book")
 public class BookController {
     List<Book> bookList = new LinkedList<>();
 
@@ -47,6 +45,9 @@ public class BookController {
     @PutMapping(value = "/updateBook/{id}")
     public Boolean update(@PathVariable("id") String id,
                           @RequestBody Book book) {
+//        Optional<Book> bookdto = bookList.stream()
+//                .filter(dto -> dto.getId().equals(id))
+//                .findFirst();
         for (Book dto : bookList) {
             if (dto.getId().equals(id)) {
                 dto.setTitle(book.getTitle());
@@ -56,16 +57,6 @@ public class BookController {
             }
         }
         return false;
-//         Optional<StudentDto> studentToUpdate = studentList.stream()
-//                .filter(dto -> dto.getId().equals(id))
-//                .findFirst();
-//        if (studentToUpdate.isPresent()) {
-//            StudentDto dto = studentToUpdate.get();
-//            dto.setName(student.getName());
-//            dto.setSurName(student.getSurName());
-//            return true;
-//        }
-//        return false;
     }
 
     @GetMapping(value = "/getBook/{id}")

@@ -1,0 +1,50 @@
+### Book List
+GET http://localhost:8080/book/listBook
+
+
+### Book Create
+POST http://localhost:8080/book/createBook
+Content-Type: application/json
+
+{
+  "title": "HTML",
+  "author": "Aliyev",
+  "publishYear": "2022-09-09"
+}
+### Book Create List
+POST http://localhost:8080/book/create/allBook
+Content-Type: application/json
+
+[
+  {
+    "title": "CSS",
+    "author": "Valiyev",
+    "publishYear": "2010-10-10"
+  },
+  {
+    "title": "JavaScript",
+    "author": "Eshmat",
+    "publishYear": "2005-06-03"
+  },
+  {
+    "title": "C++",
+    "author": "Toshmat",
+    "publishYear": "2012-11-11"
+  }
+]
+
+### Book Update
+PUT http://localhost:8080/book/updateBook/447c093a-09e0-409d-b88b-e76d6f24bf84
+Content-Type: application/json
+
+{
+  "title": "C#",
+  "author": "Snow",
+  "publishYear": "2019-03-17"
+}
+
+### Book Get Id
+GET http://localhost:8080/book/getBook/
+
+### Book Delete
+DELETE http://localhost:8080/book/deleteBook/
